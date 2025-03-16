@@ -1,0 +1,35 @@
+.book-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  
+  .book-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .book-cover {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .borrow-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .borrow-btn:hover {
+    background-color: #45a049;
+  }
+  

@@ -1,0 +1,20 @@
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .book-card, .student-list, .student-enrollment {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .student-enrollment input {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+  }
+  

@@ -1,0 +1,123 @@
+/* Dashboard main container */
+.dashboard {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Books section */
+  .book-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  /* Dashboard headings */
+  h2 {
+    color: #333;
+  }
+  
+  /* Book list styling */
+  .book-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Primary button */
+  button.primary {
+    background-color: #008CBA;
+    color: white;
+  }
+  
+  button.primary:hover {
+    background-color: #005f75;
+  }
+
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .logout-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .logout-btn:hover {
+    background-color: darkred;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .logout-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .logout-btn:hover {
+    background-color: darkred;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Dropdown */
+  .select-box {
+    width: 50%;
+    padding: 8px;
+    margin: 10px auto;
+    display: block;
+  }
+  
+  /* Borrow Button */
+  .borrow-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .borrow-btn:hover {
+    background-color: #45a049;
+  }
+  
+  

@@ -8,6 +8,7 @@ const studentsSlice = createSlice({
       state.registeredStudents.push({
         id: action.payload.id,
         name: action.payload.name,
+        dept: action.payload.dept,
         borrowedBooks: [],
       });
     },
@@ -17,7 +18,8 @@ const studentsSlice = createSlice({
       if (student) {
         student.borrowedBooks.push({
           ...book,
-          dueDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days from now
+          dueDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
+          renewCount: 0,
         });
       }
     },
@@ -33,10 +35,11 @@ const studentsSlice = createSlice({
       const student = state.registeredStudents.find((s) => s.id === studentId);
       if (student) {
         const book = student.borrowedBooks.find((b) => b.id === bookId);
-        if (book) {
+        if (book && book.renewCount < 2) {
           const newDueDate = new Date(book.dueDate);
           newDueDate.setDate(newDueDate.getDate() + 7);
           book.dueDate = newDueDate.toISOString();
+          book.renewCount += 1;
         }
       }
     },

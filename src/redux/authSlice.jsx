@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // Get stored login data from localStorage
-const storedUser = JSON.parse(localStorage.getItem("user")) || null;
+const storedUser = JSON.parse(localStorage.getItem("librarian")) || null;
 const storedRole = localStorage.getItem("role") || "guest";
 
 const authSlice = createSlice({

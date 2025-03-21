@@ -13,6 +13,7 @@ export const fetchBooks = createAsyncThunk("books/fetchBooks", async (query = "j
   }));
 });
 
+
 const booksSlice = createSlice({
   name: "books",
   initialState: { list: [], status: "idle", rentedBooks: [] },
@@ -24,11 +25,38 @@ const booksSlice = createSlice({
         state.rentedBooks.push(book);
       }
     },
+    addBook: (state, action) => {
+      // state.list.push(action.payload);
+      state.list.unshift(action.payload);
+    },
+    updateBook: (state, action) => {
+      const { id, title, author, availableCopies, cover } = action.payload;
+      const book = state.list.find((b) => b.id === id);
+      if (book) {
+        book.title = title;
+        book.author = author;
+        book.availableCopies = availableCopies;
+        book.cover = cover;
+      }
+    },
+    deleteBook: (state, action) => {
+      state.list = state.list.filter((b) => b.id !== action.payload);
+    },
     returnBook: (state, action) => {
       state.rentedBooks = state.rentedBooks.filter((b) => b.id !== action.payload);
       const originalBook = state.list.find((b) => b.id === action.payload);
       if (originalBook) originalBook.availableCopies += 1;
     },
+      setBooks: (state, action) => {
+        state.list = action.payload;
+      },
+      borrowBook: (state, action) => {
+        const book = state.list.find((b) => b.id === action.payload.bookId);
+        if (book && book.availableCopies > 0) {
+          book.availableCopies -= 1; // Reduce available count
+        }
+      },
+
   },
   extraReducers: (builder) => {
     builder
@@ -45,5 +73,5 @@ const booksSlice = createSlice({
   },
 });
 
-export const { rentBook, returnBook } = booksSlice.actions;
+export const { addBook, updateBook, deleteBook, rentBook, returnBook ,setBooks, borrowBook} = booksSlice.actions;
 export default booksSlice.reducer;

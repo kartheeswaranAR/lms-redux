@@ -6,8 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Images:
 
-<img src="./Images/library1.png" width= 50px height = 50px>
-<img src="./Images/library2.png" width= 50px height = 50px>
+<img src="./Images/library1.png" width= 100px height = 90px>
+<img src="./Images/library2.png" width= 100px height = 90px>
 
 In the project directory, you can run:
 

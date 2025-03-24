@@ -1,7 +1,7 @@
 import React ,{useState}from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/authSlice";
-import { renewBook } from "../redux/studentsSlice"; // Import renew action
+import { renewBook } from "../redux/studentsSlice";
 import { useNavigate } from "react-router-dom";
 import "../styles/StudentDashboard.css";
 

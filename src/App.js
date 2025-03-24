@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import AdminPanel from "./pages/AdminPanel";
@@ -10,14 +10,14 @@ const App = () => {
   const { role } = useSelector((state) => state.auth);
 
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         {role === "admin" && <Route path="/admin" element={<AdminPanel />} />}
-        {role === "student" && <Route path="/student-dashboard" element={<StudentDashboard />} />}
+        {role === "student" && <Route path="/student/:id" element={<StudentDashboard />} />}
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 

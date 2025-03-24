@@ -13,14 +13,14 @@ const Login = () => {
 
   const handleLogin = () => {
     if (role === "student") {
-      // Ensure the student is registered
+      //! Ensure the student is registered
       const studentExists = students.some((student) => student.id === studentId);
       if (!studentExists) {
         alert("Student ID not found! Please ask the admin to register you.");
         return;
       }
       dispatch(login({ user: studentId, role: "student" }));
-      navigate("/student-dashboard");
+      navigate("/student/" + studentId);
     } else if (role === "admin") {
       dispatch(login({ user: "Admin", role: "admin" }));
       navigate("/admin");
@@ -35,6 +35,8 @@ const Login = () => {
       <h2>Library Login</h2>
 
       {/* Role Selection */}
+      <label>Select Role:</label>
+      <br />
       <select value={role} onChange={(e) => setRole(e.target.value)}>
         <option value="student">Student</option>
         <option value="user">librarian</option>
@@ -57,5 +59,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// In the above code, we have created a Login component that allows users to select their role (student, user, or admin) and enter their student ID (if they are a student). Upon clicking the Login button, the user is redirected to the appropriate dashboard based on their role. The student ID is validated against the list of registered students before allowing the user to log in as a student.

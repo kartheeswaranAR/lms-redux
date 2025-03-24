@@ -5,6 +5,7 @@ import { borrowBook as borrowForStudent } from "../redux/studentsSlice";
 import { logout } from "../redux/authSlice";
 import BookCard from "../components/BookCard";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../styles/Dashboard.css";
 
 const Dashboard = () => {
@@ -53,8 +54,16 @@ const Dashboard = () => {
     setCurrentPage(0);
 
     try {
-      const response = await fetch(`https://openlibrary.org/works/${book.id}.json`);
-      if (!response.ok) throw new Error("Book preview not available.");
+      const response = await axios.get(`https://openlibrary.org/works/${book.id}.json`
+        , Headers = {
+          // "Access-Control-Allow-Origin": "https://cors-anywhere.herokuapp.com",
+          // "Access-Control-Allow-Origin": "*",
+          // "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+          // "Access-Control-Allow-Headers": "Content-Type, Authorization",
+          // "Cross-Origin-Opener-Policy": "same-origin",
+        }
+      );
+      if (response.status !== 200) throw new Error("Book preview not available.");
 
       const data = await response.json();
 

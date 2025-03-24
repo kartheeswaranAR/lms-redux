@@ -1,4 +1,4 @@
-/* Centered login container */
+
 .login-container {
     text-align: center;
     margin: 100px auto;
@@ -9,7 +9,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  /* Input fields */
+
   .login-container input, .login-container select {
     display: block;
     width: 90%;
@@ -19,7 +19,7 @@
     border-radius: 5px;
   }
   
-  /* Login button */
+
   .login-container button {
     width: 100%;
     padding: 10px;
@@ -34,7 +34,6 @@
     background-color: #45a049;
   }
   
-  /* Centered login container */
 .login-container {
   text-align: center;
   margin: 100px auto;
@@ -45,7 +44,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Input fields */
 .login-container select,
 .login-container input {
   display: block;
@@ -56,7 +54,6 @@
   border-radius: 5px;
 }
 
-/* Login button */
 .login-container button {
   width: 100%;
   padding: 10px;
@@ -71,7 +68,6 @@
   background-color: #45a049;
 }
 
-/* Centered login container */
 .login-container {
   text-align: center;
   margin: 100px auto;
@@ -93,7 +89,6 @@
   border-radius: 5px;
 }
 
-/* Login button */
 .login-container button {
   width: 100%;
   padding: 10px;

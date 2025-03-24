@@ -15,7 +15,7 @@ const Dashboard = () => {
   const students = useSelector((state) => state.students.registeredStudents);
   // const { user, role } = useSelector((state) => state.auth);
   const [selectedStudent, setSelectedStudent] = useState("");
-  const [searchTerm, setSearchTerm] = useState(""); // Search State
+  const [searchTerm, setSearchTerm] = useState(""); //todo: Search State
   const [selectedBook, setSelectedBook] = useState(null);
   const [previewPages, setPreviewPages] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
@@ -26,20 +26,20 @@ const Dashboard = () => {
     dispatch(fetchBooks());
   }, [dispatch]);
 
-  // Handle Logout
+  //todo: Handle Logout
   const handleLogout = () => {
     dispatch(logout());
     navigate("/");
   };
 
-  // Handle Borrow Book
+  //todo: Handle Borrow Book
   const handleBorrowBook = (book) => {
     if (!selectedStudent) {
       alert("Please select a student before borrowing.");
       return;
     }
     if (book.availableCopies > 0) {
-      dispatch(borrowBook({ bookId: book.id })); // Reduce count in Redux
+      dispatch(borrowBook({ bookId: book.id })); //todo: Reduce count in Redux
       dispatch(borrowForStudent({ studentId: selectedStudent, book }));
       alert(`Book "${book.title}" borrowed by Student ID: ${selectedStudent}`);
     } else {
@@ -88,7 +88,7 @@ const Dashboard = () => {
 
 
 
-  // Filter Books Based on Search Term
+  //todo: Filter Books Based on Search Term
   const filteredBooks = books.filter((book) =>
     book.title.toLowerCase().includes(searchTerm.toLowerCase())
   );

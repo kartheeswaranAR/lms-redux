@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerStudent } from "../redux/studentsSlice";
-import "../styles/StudentEnrollment.css";  // Import CSS file
+import "../styles/StudentEnrollment.css";
 
 const StudentEnrollment = () => {
   const [studentId, setStudentId] = useState("");

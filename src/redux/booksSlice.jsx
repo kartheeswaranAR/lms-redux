@@ -1,14 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// Fetch books from Open Library API
-export const fetchBooks = createAsyncThunk("books/fetchBooks", async (query = "javascript") => {
-  const response = await axios.get(`https://openlibrary.org/search.json?q=${query}&limit=50`);
+//* Fetch books from Open Library API
+export const fetchBooks = createAsyncThunk("books/fetchBooks", async (query = "library") => { //? This is the action creator
+  const response = await axios.get(`https://openlibrary.org/search.json?q=${query}&limit=100`); //! It creates the promise lifecycle for us
   return response.data.docs.map((book) => ({
     id: book.key,
     title: book.title,
     author: book.author_name ? book.author_name[0] : "Unknown",
-    availableCopies: Math.floor(Math.random() * 10) + 1, // Simulating stock count
+    availableCopies: Math.floor(Math.random() * 100) + 1, // Simulating stock count
     cover: book.cover_i ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` : null,
   }));
 });
@@ -53,7 +53,7 @@ const booksSlice = createSlice({
       borrowBook: (state, action) => {
         const book = state.list.find((b) => b.id === action.payload.bookId);
         if (book && book.availableCopies > 0) {
-          book.availableCopies -= 1; // Reduce available count
+          book.availableCopies -= 1; //todo: Reduce available count
         }
       },
 
